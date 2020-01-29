@@ -14,19 +14,21 @@ let a = 60.5,
     maxResult = result[0],
     maxi = 0,
     minResult = result[0],
-    mini = 0;
+    mini = 0,
+    temp;
 isInt[0] = (Number.isInteger(result[0]) ? 'integer' : 'double');
 //alert(isInt[0]);
 for (let i = 1; i < 5; ++i) {
-    if (maxResult < result[i]) {
-        maxResult = result[i];
+    temp = result[i];
+    if (maxResult < temp) {
+        maxResult = temp;
         maxi = i;
     };
-    if (minResult > result[i]) {
-        minResult = result[i];
+    if (minResult > temp) {
+        minResult = temp;
         mini = i;
     }
-    isInt[i] = Number.isInteger(result[i]) ? 'integer' : 'double';
+    isInt[i] = Number.isInteger(temp) ? 'integer' : 'double';
     //alert(isInt[i]);
 }
 alert('a = ' + a + '\nb = ' + b + '\n' +
