@@ -1,6 +1,6 @@
 console.log("Привет, мир!");
 
-let a = 60,
+let a = 60.5,
     b = 60,
     sum = a + b,
     difference = a - b,
@@ -9,10 +9,14 @@ let a = 60,
     modulo = a % b,
     result = [sum, difference, multiplication, division, modulo],
     operation = ['sum', 'difference', 'multiplication', 'division', 'modulo'],
+    //doubleInt = ['integer', 'double'],
+    isInt = ['', '', '', '', ''],
     maxResult = result[0],
     maxi = 0,
     minResult = result[0],
     mini = 0;
+isInt[0] = (Number.isInteger(result[0]) ? 'integer' : 'double');
+//alert(isInt[0]);
 for (let i = 1; i < 5; ++i) {
     if (maxResult < result[i]) {
         maxResult = result[i];
@@ -22,13 +26,15 @@ for (let i = 1; i < 5; ++i) {
         minResult = result[i];
         mini = i;
     }
+    isInt[i] = Number.isInteger(result[i]) ? 'integer' : 'double';
+    //alert(isInt[i]);
 }
 alert('a = ' + a + '\nb = ' + b + '\n' +
-    operation[0] + ': a + b = ' + result[0] + '\n' +
-    operation[1] + ': a - b = ' + result[1] + '\n' +
-    operation[2] + ': a * b = ' + result[2] + '\n' +
-    operation[3] + ': a / b = ' + result[3] + '\n' +
-    operation[4] + ': a % b = ' + result[4] + '\n' +
+    operation[0] + ': a + b = ' + result[0] + ' - ' + isInt[0] + '\n' +
+    operation[1] + ': a - b = ' + result[1] + ' - ' + isInt[1] + '\n' +
+    operation[2] + ': a * b = ' + result[2] + ' - ' + isInt[2] + '\n' +
+    operation[3] + ': a / b = ' + result[3] + ' - ' + isInt[3] + '\n' +
+    operation[4] + ': a % b = ' + result[4] + ' - ' + isInt[4] + '\n' +
     'minResult = ' + minResult + ' by ' + operation[mini] + '\n' +
     'maxResult = ' + maxResult + ' by ' + operation[maxi]);
 
